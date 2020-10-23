@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import TvShowCard from './TvShowCard';
 
-function TvShows({ tvShows, location, match }) {
+function TvShows({ tvShows, location }) {
 
   const queryParams = new URLSearchParams(location.search);
   const searchGenre = queryParams.get('genre');
@@ -18,7 +18,7 @@ function TvShows({ tvShows, location, match }) {
   const displayTvShows = () => {
     return filteredTvShows.map(tvShow => {
       return (
-        <Link key={tvShow.id} to={`${match.url}/${tvShow.id}`}>
+        <Link key={tvShow.id} to={`/shows/${tvShow.id}`}>
           <TvShowCard tvShow={tvShow} />
         </Link>
       );
