@@ -1,0 +1,82 @@
+header {
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+#logo {
+  margin-left: 2rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo img {
+  height: 60px;
+  margin-bottom: 0.4rem;
+}
+
+header a {
+  color: white;
+  margin-right: 2rem;
+  font-size: 1.5rem;
+}
+
+.active {
+  color: yellow;
+}
+
+.home {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  height: 60vh;
+  width: 40vw;
+}
+
+.tv-shows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tv-show-card {
+  margin: 3rem;
+}
+
+.cast {
+  display: flex;
+}
+
+.person-card {
+  margin: 3rem;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genre-card {
+  margin: 1rem;
+  padding: 0.4rem;
+  background-color: black;
+  color: white;
+  text-shadow: 0 0 2px yellow;
+  width: fit-content;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
