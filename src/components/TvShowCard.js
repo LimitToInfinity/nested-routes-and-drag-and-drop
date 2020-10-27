@@ -5,6 +5,7 @@ function TvShowCard({ tvShow }) {
     <div className="tv-show-card">
       <h3>{tvShow.name}</h3>
       <img src={tvShow.image.medium} alt={tvShow.name} />
+      <button><i class="far fa-star"></i></button>
     </div>
 
   );
