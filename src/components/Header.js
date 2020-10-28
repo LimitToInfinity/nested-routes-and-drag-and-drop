@@ -14,6 +14,7 @@ function Header() {
 
       <nav>
         <NavLink to="/shows">Shows</NavLink>
+        <NavLink to="/favorites">Favorites</NavLink>
         <NavLink to="/genres">Genres</NavLink>
       </nav>
     </header>

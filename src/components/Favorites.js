@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import TvShowCard from './TvShowCard';
 
-function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, location, history }) {
+function Favorites({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, location, history }) {
 
   const queryParams = new URLSearchParams(location.search);
   const searchGenre = queryParams.get('genre');
@@ -15,17 +15,14 @@ function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, locati
     }
   }, []);
 
-  let filteredTvShows = [...tvShows];
-  if (searchGenre) {
-    filteredTvShows = filteredTvShows.filter(tvShow => {
-      return tvShow.genres.includes(searchGenre);
-    });
-  }
-
-  console.log(tvShowIds);
+  const favoriteTvShows = tvShowIds.reduce((shows, tvShowId) => {
+    const favoriteTvShow = tvShows.find(tvShow => tvShow.id === tvShowId);
+    if (favoriteTvShow) { shows.push(favoriteTvShow) };
+    return shows;
+  }, []);
 
   const displayTvShows = () => {
-    return filteredTvShows.map(tvShow => {
+    return favoriteTvShows.map(tvShow => {
       return (
         <TvShowCard
           key={tvShow.id}
@@ -39,10 +36,10 @@ function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, locati
   }
 
   return (
-    <section className="tv-shows">
+    <section className="favorite-tv-shows">
       { displayTvShows() }
     </section>
   );
 }
 
-export default TvShows;
+export default Favorites;

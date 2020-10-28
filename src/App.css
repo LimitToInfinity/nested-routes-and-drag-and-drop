@@ -43,7 +43,7 @@ iframe {
   width: 40vw;
 }
 
-.tv-shows {
+.tv-shows, .favorite-tv-shows {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -51,6 +51,14 @@ iframe {
 
 .tv-show-card {
   margin: 3rem;
+  position: relative;
+}
+
+.tv-show-card > button {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+  cursor: pointer;
 }
 
 .cast {
