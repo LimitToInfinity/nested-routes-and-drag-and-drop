@@ -13,7 +13,7 @@ function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, locati
     if (!searchGenre) {
       history.push({search: `?shows=[${favoritedShows}]`});
     }
-  }, []);
+  }, [history, queryParams, searchGenre, setTvShowIds, tvShowIds]);
 
   let filteredTvShows = [...tvShows];
   if (searchGenre) {

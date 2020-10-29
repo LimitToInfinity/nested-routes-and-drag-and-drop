@@ -10,7 +10,7 @@ function TvShowCard({ tvShow, isFavorited, addOrRemoveTvShowId, history }) {
 
   const [isFavorite, setFavorite] = useState(false);
 
-  useEffect(() => setFavorite(isFavorited), []);
+  useEffect(() => setFavorite(isFavorited), [isFavorited]);
 
   const addToFavorites = () => {
     setFavorite(!isFavorite);

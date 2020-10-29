@@ -13,7 +13,7 @@ function Favorites({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, loca
     if (!searchGenre) {
       history.push({search: `?shows=[${favoritedShows}]`});
     }
-  }, []);
+  }, [history, queryParams, searchGenre, setTvShowIds, tvShowIds]);
 
   const favoriteTvShows = tvShowIds.reduce((shows, tvShowId) => {
     const favoriteTvShow = tvShows.find(tvShow => tvShow.id === tvShowId);
