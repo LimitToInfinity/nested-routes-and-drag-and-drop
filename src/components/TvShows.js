@@ -13,7 +13,7 @@ function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, locati
     if (!searchGenre) {
       history.push({search: `?shows=[${favoritedShows}]`});
     }
-  }, [history, queryParams, searchGenre, setTvShowIds, tvShowIds]);
+  }, []);
 
   let filteredTvShows = [...tvShows];
   if (searchGenre) {
@@ -21,8 +21,6 @@ function TvShows({ tvShows, tvShowIds, setTvShowIds, addOrRemoveTvShowId, locati
       return tvShow.genres.includes(searchGenre);
     });
   }
-
-  console.log(tvShowIds);
 
   const displayTvShows = () => {
     return filteredTvShows.map(tvShow => {
